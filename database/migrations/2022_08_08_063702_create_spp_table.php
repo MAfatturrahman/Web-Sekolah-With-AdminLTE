@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('spps', function (Blueprint $table) {
             $table->id(); //priymary key
-            $table->integer('spp');
+            $table->float('spp');
             $table->timestamps();
         });
     }

@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('spp');
             $table->string('jurusan');
             $table->integer('tahun');
+            $table->date('from');
+            $table->date('to');
             $table->timestamps();
         });
     }

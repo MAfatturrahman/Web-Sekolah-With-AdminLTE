@@ -12,7 +12,7 @@ class MuridController extends Controller
     {
         $datas = murid::all();
         return view('admin.murid.index')->with([
-            'datas' => $datas
+            'datas' => $datas,
         ]);
     }
 
@@ -47,6 +47,8 @@ class MuridController extends Controller
             $make->spp = $request->spp;
             $make->jurusan = $request->jurusan;
             $make->tahun = $request->tahun;
+            $make->from = $request->from;
+            $make->to = $request->to;
             $make->save();
             return redirect()->route('murid.index')->with('success', 'Murid Baru Berhasil Di Tambahkan');
         };

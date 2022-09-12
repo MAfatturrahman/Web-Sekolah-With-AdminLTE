@@ -25,12 +25,14 @@ class HomeController extends Controller
         $dataPetugas = petugas::all();
         $dataMurid = Murid::all();
         $dataBerita = Berita::all();
+        $dataUser = User::all();
 
         return view('home')->with([
             'dataGuru' => $dataGuru,
             'dataPetugas' => $dataPetugas,
             'dataMurid' => $dataMurid,
             'dataBerita' => $dataBerita,
+            'dataUser' => $dataUser,
         ]);
     }
 }

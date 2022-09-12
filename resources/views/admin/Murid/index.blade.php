@@ -19,7 +19,7 @@
 
         {{-- Table Murid --}}
         @php
-            $heads = ['No', 'NIS', 'Name', 'Umur', 'Kelas', 'jurusan', 'Tanggal Lahir', ['label' => 'Actions', 'no-export' => true, 'width' => 5]];
+            $heads = ['No', 'NIS', 'Name', 'Umur', 'Kelas', 'Jurusan', 'Tanggal Lahir', ['label' => 'Actions', 'no-export' => true, 'width' => 5]];
             $no = 1;
             
             $dataMurid = [];

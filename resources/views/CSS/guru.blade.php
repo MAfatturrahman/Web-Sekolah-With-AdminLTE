@@ -21,6 +21,16 @@
             box-shadow: 0px 5px 15px 0px;
         }
 
+        .my_card_dasbord {
+            width: 23%;
+            height: 50%;
+            padding: 30px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 5px 15px 0px;
+        }
+
         .my_card_history {
             width: 55%;
             height: 50%;
