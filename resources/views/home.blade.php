@@ -10,40 +10,13 @@
 @section('content')
     <p>Selamat Datang Di Sekolah Negeri Kami</p>
     @php
-    foreach ($dataGuru as $guru) {
-        $jumlahGuru = 0;
-    }
-    foreach ($dataPetugas as $petugas) {
-        $jumlahPetugas = 0;
-    }
-    foreach ($dataMurid as $murid) {
-        $jumlahMurid = 0;
-    }
-    foreach ($dataBerita as $berita) {
-        $jumlahBerita = 0;
-    }
-    foreach ($dataUser as $user) {
-        $jumlahUser = 0;
-    }
+        $jumlahGuru = count($dataGuru);
+        $jumlahPetugas = count($dataPetugas);
+        $jumlahMurid = count($dataMurid);
+        $jumlahBerita = count($dataBerita);
+        $jumlahUser = count($dataUser);
     @endphp
 
-    @php
-    foreach ($dataGuru as $guru) {
-        $jumlahGuru++;
-    }
-    foreach ($dataPetugas as $petugas) {
-        $jumlahPetugas++;
-    }
-    foreach ($dataMurid as $murid) {
-        $jumlahMurid++;
-    }
-    foreach ($dataBerita as $berita) {
-        $jumlahBerita++;
-    }
-    foreach ($dataUser as $user) {
-        $jumlahUser++;
-    }
-    @endphp
     <div class="d-flex gap-3">
         <div class="my_card_dasbord">
             <h4 class="card-header text-primary">Guru</h4>

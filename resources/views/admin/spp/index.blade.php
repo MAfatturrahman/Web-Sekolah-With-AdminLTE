@@ -16,19 +16,19 @@
 
         {{-- Table SPP --}}
         @php
-            $heads = ['No', 'NIS', 'Name', 'Kelas', 'Jurusan', 'SPP', 'Tahun', ['label' => 'Actions', 'no-export' => true, 'width' => 5]];
+            $heads = ['No', 'NIS', 'Name', 'Kelas', 'Jurusan', ['label' => 'Actions', 'no-export' => true, 'width' => 5]];
             $no = 1;
             
             $dataMurid = [];
             foreach ($datas as $spp) {
-                $btnBayar = '<a href="'.route('spp.edit', $spp->id).'" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa-solid fa-credit-card"></i></a>';
-                $dataMurid[] = [$no++, $spp->nis, $spp->nama, $spp->kelas, $spp->jurusan, $spp->spp, $spp->tahun, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="'.route('murid.destroy', $spp->id).'">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnBayar . '</form></nobr>'];
+                $btnBayar = '<a href="' . route('spp.edit', $spp->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa-solid fa-credit-card"></i></a>';
+                $dataMurid[] = [$no++, $spp->nis, $spp->nama, $spp->kelas, $spp->jurusan, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="' . route('murid.destroy', $spp->id) . '">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnBayar . '</form></nobr>'];
             }
             
             $config = [
                 'data' => $dataMurid,
                 'order' => [[1, 'asc']],
-                'columns' => [null, null, null, ['orderable' => false]],
+                'columns' => [null, null, null, null, ['orderable' => false]],
             ];
         @endphp
 

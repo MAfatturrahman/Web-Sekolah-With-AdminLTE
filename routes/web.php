@@ -42,13 +42,13 @@ Route::group(['middleware' => ['auth']], function () {
 
     //Guru
     //-------------------------------------------------------------------------------------------------
-    Route::get('/guru', [GuruController::class, 'index'])->name('guru.index')->middleware('can:view-berita');
-    Route::get('/guru/create', [GuruController::class, 'create'])->name('guru.create')->middleware('can:create-berita');
-    Route::get('/guru/{id}/edit', [GuruController::class, 'edit'])->name('guru.edit')->middleware('can:edit-berita');
-    Route::get('/guru/{id}', [GuruController::class, 'show'])->name('guru.show')->middleware('can:show-berita');
-    Route::delete('/guru/{id}', [GuruController::class, 'destroy'])->name('guru.destroy')->middleware('can:delete-berita');
-    Route::post('/guru', [GuruController::class, 'store'])->name('guru.store')->middleware('can:create-berita');
-    Route::put('/guru/{id}', [GuruController::class, 'update'])->name('guru.update')->middleware('can:edit-berita');
+    Route::get('/guru', [GuruController::class, 'index'])->name('guru.index')->middleware('can:view-guru');
+    Route::get('/guru/create', [GuruController::class, 'create'])->name('guru.create')->middleware('can:create-guru');
+    Route::get('/guru/{id}/edit', [GuruController::class, 'edit'])->name('guru.edit')->middleware('can:edit-guru');
+    Route::get('/guru/{id}', [GuruController::class, 'show'])->name('guru.show')->middleware('can:show-guru');
+    Route::delete('/guru/{id}', [GuruController::class, 'destroy'])->name('guru.destroy')->middleware('can:delete-guru');
+    Route::post('/guru', [GuruController::class, 'store'])->name('guru.store')->middleware('can:create-guru');
+    Route::put('/guru/{id}', [GuruController::class, 'update'])->name('guru.update')->middleware('can:edit-guru');
     //-------------------------------------------------------------------------------------------------
 
     //Petugas

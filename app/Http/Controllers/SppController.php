@@ -20,9 +20,12 @@ class SppController extends Controller
     //Untuk Memanggil Halaman Edit
     public function edit($id)
     {
-        $make = murid::find($id);
+        $murid = murid::find($id);
+        $spp = spp::find($murid->spp_id);
+
         return view('admin.spp.edit', compact(
-            'make'
+            'murid',
+            'spp',
         ));
     }
 
@@ -30,18 +33,23 @@ class SppController extends Controller
     public function update(Request $request, $id)
     {
         $age = date_diff(date_create($request->tanggal_lahir), date_create('now'))->y;
-        $make = murid::find($id);
-        $make->nama = $request->nama;
-        $make->umur = $age;
-        $make->kelas = $request->kelas;
-        $make->nis = $request->nis;
-        $make->tanggal_lahir = $request->tanggal_lahir;
-        $make->spp = $request->spp;
-        $make->tahun = $request->tahun;
-        $make->jurusan = $request->jurusan;
-        
-        $make->save();
+        $murid = murid::find($id);
 
-        return redirect('spp')->route('spp.index')->with('success', 'Pembayaran Berhasil');
+        $spp = spp::find($murid->spp_id);
+        $spp->from = $request->from;
+        $spp->to = $request->to;
+        $spp->save();
+
+        $murid->nama = $request->nama;
+        $murid->umur = $age;
+        $murid->kelas = $request->kelas;
+        $murid->nis = $request->nis;
+        $murid->tanggal_lahir = $request->tanggal_lahir;
+        $murid->jurusan = $request->jurusan;
+        $murid->jk = $request->jk;
+
+        $murid->save();
+
+        return redirect()->route('spp.index')->with('success', 'Pembayaran Berhasil');
     }
 }

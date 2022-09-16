@@ -25,15 +25,12 @@
                     {{ $make->tanggal_lahir }}</h2>
             </div>
             <div class="d-flex mb-4">
-                <h3>Jurusan </h3>
-                <h2 class="form-control me-1 ms-1" name="kelas">{{ $make->jurusan }}
+                <h3>Jurusan :</h3>
+                <h2 class="form-control me-3 ms-3" style="width: 30%;" name="kelas">{{ $make->jurusan }}
                 </h2>
-                <h3>SPP </h3>
-                <h2 class="form-control ms-1 me-1" name="tanggal_lahir">
-                    {{ $make->spp }}</h2>
-                <h3>TSPP</h3>
-                <h2 class="form-control ms-1 me-1"" name="tahun">
-                    {{ $make->tahun }}</h2>
+                <h3>JK :</h3>
+                <h2 class="form-control ms-3 me-3" style="width: 35%;" name="jk">
+                    {{ $make->jk }}</h2>
             </div>
 
             <a class="btn btn-primary" href="{{ url('murid') }}">Back</a>

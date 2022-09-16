@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\murid;
+use App\Models\spp;
 
 class MuridController extends Controller
 {
@@ -19,9 +20,11 @@ class MuridController extends Controller
     //Untuk Memanggil Halaman Create (AdminPages) 
     public function create()
     {
-        $make = new murid;
+        $murid = new murid;
+        $spp = new spp;
         return view('admin.murid.create', compact(
-            'make'
+            'murid',
+            'spp',
         ));
     }
 
@@ -32,24 +35,24 @@ class MuridController extends Controller
         if (murid::where('nis', '=', $request->nis)->exists()) {
             return redirect()->route('murid.create')->with('alert', 'NIS Sudah Ada');
         } else {
-            $spps = $request->spp;
-            $dataSpp = [];
-            $make = new murid;
-            $make->nama = $request->nama;
-            $make->umur = $age;
-            $make->kelas = $request->kelas;
-            $make->nis = $request->nis;
-            $make->tanggal_lahir = $request->tanggal_lahir;
+            $murid = new murid;
+            $spp = new spp;
+            $spp->from = $request->from;
+            $spp->to = $request->to;
+            $spp->save();
+
+            $murid->nama = $request->nama;
+            $murid->umur = $age;
+            $murid->kelas = $request->kelas;
+            $murid->nis = $request->nis;
+            $murid->tanggal_lahir = $request->tanggal_lahir;
             // foreach ($spps as $spp) {
             //     $dataSpp = $spp;
             // }
-
-            $make->spp = $request->spp;
-            $make->jurusan = $request->jurusan;
-            $make->tahun = $request->tahun;
-            $make->from = $request->from;
-            $make->to = $request->to;
-            $make->save();
+            $murid->jurusan = $request->jurusan;
+            $murid->jk = $request->jk;
+            $murid->spp_id = $spp->id;
+            $murid->save();
             return redirect()->route('murid.index')->with('success', 'Murid Baru Berhasil Di Tambahkan');
         };
     }
@@ -66,9 +69,11 @@ class MuridController extends Controller
     //Untuk Memanggil Halaman Edit (AdminPages)
     public function edit($id)
     {
-        $make = murid::find($id);
+        $murid = murid::find($id);
+        $spp = new spp;
         return view('admin.murid.edit', compact(
-            'make'
+            'murid',
+            'spp'
         ));
     }
 
@@ -76,16 +81,16 @@ class MuridController extends Controller
     public function update(Request $request, $id)
     {
         $age = date_diff(date_create($request->tanggal_lahir), date_create('now'))->y;
-        $make = murid::find($id);
-        $make->nama = $request->nama;
-        $make->umur = $age;
-        $make->kelas = $request->kelas;
-        $make->nis = $request->nis;
-        $make->tanggal_lahir = $request->tanggal_lahir;
-        $make->spp = $request->spp;
-        $make->jurusan = $request->jurusan;
-        $make->tahun = $request->tahun;
-        $make->save();
+        $murid = murid::find($id);
+
+        $murid->nama = $request->nama;
+        $murid->umur = $age;
+        $murid->kelas = $request->kelas;
+        $murid->nis = $request->nis;
+        $murid->tanggal_lahir = $request->tanggal_lahir;
+        $murid->jurusan = $request->jurusan;
+        $murid->jk = $request->jk;
+        $murid->save();
 
         return redirect()->route('murid.index')->with('success', 'Murid Berhasil Di Edit');
     }
@@ -96,14 +101,5 @@ class MuridController extends Controller
         $make = murid::find($id);
         $make->delete();
         return redirect()->route('murid.index')->with('success', 'Data Berhasil Di Hapus');
-    }
-
-    //Untuk Memanggil Halaman Bayar (AdminPages.SPP)
-    public function bayar($id)
-    {
-        $make = murid::find($id);
-        return view('admin.murid.bayar', compact(
-            'make'
-        ));
     }
 }

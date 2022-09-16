@@ -23,10 +23,10 @@
             
             $dataGuru = [];
             foreach ($datas as $guru) {
-                $btnEdit = '<a href="'.route('guru.edit', $guru->id).'" class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit" ><i class="fa fa-lg fa-fw fa-pen"></i></a>';
+                $btnEdit = '<a href="' . route('guru.edit', $guru->id) . '" class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit" ><i class="fa fa-lg fa-fw fa-pen"></i></a>';
                 $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" type="submit" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></button>';
-                $btnDetails = '<a href="'.route('guru.show', $guru->id).'" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>';
-                $dataGuru[] = [$no++, $guru->nip, $guru->umur, $guru->matkul, $guru->nama, $guru->tanggal_lahir, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="'.route('guru.destroy', $guru->id).'">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnEdit . $btnDelete . $btnDetails . '</form></nobr>'];
+                $btnDetails = '<a href="' . route('guru.show', $guru->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>';
+                $dataGuru[] = [$no++, $guru->nip, $guru->umur, $guru->matkul, $guru->nama, $guru->tanggal_lahir, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="' . route('guru.destroy', $guru->id) . '">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnEdit . $btnDelete . $btnDetails . '</form></nobr>'];
             }
             
             $config = [
