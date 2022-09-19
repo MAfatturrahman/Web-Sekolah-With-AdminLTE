@@ -10,12 +10,13 @@
         </div>
     @endif
 
-    <div class="tambah">
-        <a class="btn btn-success mb-2" href="{{ route('berita.create') }}">Tambah</a>
-    </div>
-    <div class="my_card" style="width: 100%; margin: auto;">
-        <br>
+    @if (auth()->user()->can('create-berita'))
+        <div class="tambah">
+            <a class="btn btn-success mb-2" href="{{ route('berita.create') }}">Tambah</a>
+        </div>
+    @endif
 
+    <div class="my_card" style="width: 100%; margin: auto;"><br>
 
         {{-- Table Berita --}}
         @php
@@ -24,10 +25,25 @@
             
             $dataBerita = [];
             foreach ($datas as $berita) {
-                $btnEdit = '<a href="'.route('berita.edit', $berita->id).'" class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit" ><i class="fa fa-lg fa-fw fa-pen"></i></a>';
-                $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" type="submit" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></button>';
-                $btnDetails = '<a href="'.route('berita.show', $berita->id).'" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>';
-                $dataBerita[] = [$no++, '<img src="'.$berita->gambar.'">', $berita->title, $berita->deskripsi, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="'.route('berita.destroy', $berita->id).'">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnEdit . $btnDelete . $btnDetails . '</form></nobr>'];
+                $btnEdit = auth()
+                    ->user()
+                    ->can('edit-berita')
+                    ? '<a href="' . route('berita.edit', $berita->id) . '" class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit" ><i class="fa fa-lg fa-fw fa-pen"></i></a>'
+                    : '';
+            
+                $btnDelete = auth()
+                    ->user()
+                    ->can('delete-berita')
+                    ? '<button class="btn btn-xs btn-default text-danger mx-1 shadow" type="submit" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></button>'
+                    : '';
+            
+                $btnDetails = auth()
+                    ->user()
+                    ->can('show-berita')
+                    ? '<a href="' . route('berita.show', $berita->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>'
+                    : '';
+            
+                $dataBerita[] = [$no++, '<img src="' . $berita->gambar . '">', $berita->title, $berita->deskripsi, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="' . route('berita.destroy', $berita->id) . '">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnEdit . $btnDelete . $btnDetails . '</form></nobr>'];
             }
             
             $config = [

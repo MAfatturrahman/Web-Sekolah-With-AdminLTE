@@ -10,12 +10,13 @@
         </div>
     @endif
 
-    <div class="tambah">
-        <a class="btn btn-success mb-2" href="{{ route('petugas.create') }}">Tambah</a>
-    </div>
-    <div class="my_card" style="width: 100%; margin: auto;">
-        <br>
+    @if (auth()->user()->can('create-petugas'))
+        <div class="tambah">
+            <a class="btn btn-success mb-2" href="{{ route('petugas.create') }}">Tambah</a>
+        </div>
+    @endif
 
+    <div class="my_card" style="width: 100%; margin: auto;"><br>
 
         {{-- Table Petugas --}}
         @php
@@ -24,10 +25,25 @@
             
             $dataPetugas = [];
             foreach ($datas as $petugas) {
-                $btnEdit = '<a href="'.route('petugas.edit', $petugas->id).'" class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit" ><i class="fa fa-lg fa-fw fa-pen"></i></a>';
-                $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" type="submit" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></button>';
-                $btnDetails = '<a href="'.route('petugas.show', $petugas->id).'" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>';
-                $dataPetugas[] = [$no++, $petugas->nip, $petugas->nama, $petugas->umur, $petugas->tugas, $petugas->tanggal_lahir, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="'.route('petugas.destroy', $petugas->id).'">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnEdit . $btnDelete . $btnDetails . '</form></nobr>'];
+                $btnEdit = auth()
+                    ->user()
+                    ->can('edit-petugas')
+                    ? '<a href="' . route('petugas.edit', $petugas->id) . '" class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit" ><i class="fa fa-lg fa-fw fa-pen"></i></a>'
+                    : '';
+            
+                $btnDelete = auth()
+                    ->user()
+                    ->can('delete-petugas')
+                    ? '<button class="btn btn-xs btn-default text-danger mx-1 shadow" type="submit" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></button>'
+                    : '';
+            
+                $btnDetails = auth()
+                    ->user()
+                    ->can('show-petugas')
+                    ? '<a href="' . route('petugas.show', $petugas->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>'
+                    : '';
+            
+                $dataPetugas[] = [$no++, $petugas->nip, $petugas->nama, $petugas->umur, $petugas->tugas, $petugas->tanggal_lahir, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="' . route('petugas.destroy', $petugas->id) . '">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnEdit . $btnDelete . $btnDetails . '</form></nobr>'];
             }
             
             $config = [

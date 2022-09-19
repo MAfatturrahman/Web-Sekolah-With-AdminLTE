@@ -15,9 +15,11 @@
             <br>
 
             <div class="my_card">
-                <div class="tambah">
-                    <a class="btn btn-success mb-2" href="{{ route('role.create') }}">Tambah</a>
-                </div>
+                @if (auth()->user()->can('create-role'))
+                    <div class="tambah">
+                        <a class="btn btn-success mb-2" href="{{ route('role.create') }}">Tambah</a>
+                    </div>
+                @endif
 
                 {{-- Table Petugas --}}
                 @php
@@ -26,13 +28,28 @@
                     
                     $dataUser = [];
                     foreach ($datas as $user) {
-                        $btnEdit = '<a href="'.route('role.edit', $user->id).'" class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit" ><i class="fa fa-lg fa-fw fa-pen"></i></a>';
-                        $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" type="submit" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></button>';
-                        $btnDetails = '<a href="'.route('role.show', $user->id).'" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>';
+                        $btnEdit = auth()
+                            ->user()
+                            ->can('edit-role')
+                            ? '<a href="' . route('role.edit', $user->id) . '" class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit" ><i class="fa fa-lg fa-fw fa-pen"></i></a>'
+                            : '';
+                    
+                        $btnDelete = auth()
+                            ->user()
+                            ->can('delete-role')
+                            ? '<button class="btn btn-xs btn-default text-danger mx-1 shadow" type="submit" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></button>'
+                            : '';
+                    
+                        $btnDetails = auth()
+                            ->user()
+                            ->can('show-role')
+                            ? '<a href="' . route('role.show', $user->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>'
+                            : '';
+                    
                         if ($user->id == 1) {
                             $dataUser[] = [$no++, $user->name, '<form class="d-flex justify-content-center">' . $btnDetails . '</form>'];
                         } else {
-                            $dataUser[] = [$no++, $user->name, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="'.route('role.destroy', $user->id).'">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnEdit . $btnDelete . $btnDetails . '</form></nobr>'];
+                            $dataUser[] = [$no++, $user->name, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="' . route('role.destroy', $user->id) . '">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnEdit . $btnDelete . $btnDetails . '</form></nobr>'];
                         }
                     }
                     

@@ -11,8 +11,7 @@
     @endif
 
     <h2>Pembayaran SPP</h2>
-    <div class="my_card" style="width: 100%; margin: auto;">
-        <br>
+    <div class="my_card" style="width: 100%; margin: auto;"><br>
 
         {{-- Table SPP --}}
         @php
@@ -21,7 +20,12 @@
             
             $dataMurid = [];
             foreach ($datas as $spp) {
-                $btnBayar = '<a href="' . route('spp.edit', $spp->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa-solid fa-credit-card"></i></a>';
+                $btnBayar = auth()
+                    ->user()
+                    ->can('edit-spp')
+                    ? '<a href="' . route('spp.edit', $spp->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa-solid fa-credit-card"></i></a>'
+                    : '';
+            
                 $dataMurid[] = [$no++, $spp->nis, $spp->nama, $spp->kelas, $spp->jurusan, '<form onsubmit="return confirm(\'Apa Kah Anda Yakin?\')" class="d-flex justify-content-center" method="POST" action="' . route('murid.destroy', $spp->id) . '">' . csrf_field() . '<input type="hidden" name="_method" value="DELETE"/>' . $btnBayar . '</form></nobr>'];
             }
             
