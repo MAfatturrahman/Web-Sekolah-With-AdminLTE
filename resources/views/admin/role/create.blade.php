@@ -200,21 +200,21 @@
                     </div>
                     {{-- Roles End --}}
 
-                    {{-- History --}}
+                    {{-- Audit --}}
                     <div class="d-flex flex-column lh-1">
                         <div class="form-group">
-                            <h4>History</h4>
+                            <h4>Audit</h4>
                         </div>
                         <div class="form-group">
-                            <input type="checkbox" id="role" name="permission[]" value="view-history">
-                            <label for="role">view-history</label>
+                            <input type="checkbox" id="role" name="permission[]" value="view-audit">
+                            <label for="role">view-audit</label>
                         </div>
                         <div class="form-group">
-                            <input type="checkbox" id="role" name="permission[]" value="show-history">
-                            <label for="role">show-history</label>
+                            <input type="checkbox" id="role" name="permission[]" value="show-audit">
+                            <label for="role">show-audit</label>
                         </div>
                     </div>
-                    {{-- History End --}}
+                    {{-- Audit End --}}
                 </div>
 
                 <div class="d-flex justify-content-between">

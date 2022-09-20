@@ -12,8 +12,8 @@ class UserSeeder extends Seeder
     public function run()
     {
         $superAdmin = User::create([
-            'name' => 'Super Admin',
-            'email' => 'superAdmin@gmail.com',
+            'name' => 'Sekolah Negeri',
+            'email' => 'sekolahNegeri@gmail.com',
             'password' => bcrypt('123456789')
         ]);
         $superAdmin->assignRole('superAdmin');

@@ -5,16 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Sekolah</title>
-    <Style>
+    <style>
         .judul {
             justify-content: center;
-            background-color: black;
             display: flex;
             font-size: 40px;
             text-decoration: none;
@@ -26,20 +20,6 @@
 
         .judul:hover {
             color: #111;
-        }
-
-        .body-top p {
-            color: gray;
-            margin-bottom: 20px;
-        }
-
-        .body-top-space h3 {
-            text-align: left;
-            border-bottom-style: solid;
-            border-bottom-color: #007bff;
-            border-bottom-width: 50%;
-            color: black;
-            margin-bottom: 20px;
         }
 
         .sidenav {
@@ -76,6 +56,16 @@
             border-radius: 10px;
         }
 
+        .login {
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .login:hover {
+            color: black;
+        }
+
         .sidenav .closebtn {
             position: absolute;
             top: 0;
@@ -99,14 +89,18 @@
             }
         }
 
-        .login {
-            font-size: 24px;
-            text-decoration: none;
-            color: white;
+        .body-top p {
+            color: gray;
+            margin-bottom: 20px;
         }
 
-        .login:hover {
+        .body-top-space h3 {
+            text-align: center;
+            border-bottom-style: solid;
+            border-bottom-color: #007bff;
+            border-bottom-width: 50%;
             color: black;
+            margin-bottom: 20px;
         }
 
         .my_card {
@@ -114,13 +108,15 @@
             width: 100%;
             height: 10%;
             padding: .8rem;
-            margin-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 40px;
             gap: .5rem;
             border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
         }
 
         .card_thumbnail {
-            width: 10%;
+            width: 30%;
             height: 100%;
         }
 
@@ -156,14 +152,13 @@
         .footer p {
             font-size: 15px;
             text-align: center;
-            color: white;
+            color: white
         }
 
         .footer p:hover {
             color: black;
-            font-size: 15px;
         }
-    </Style>
+    </style>
 </head>
 
 <body>

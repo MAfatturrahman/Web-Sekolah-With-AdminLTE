@@ -2,30 +2,29 @@
 @extends('layouts.cssjurusan')
 
 @section('content')
-
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="{{ url('/') }}">Beranda</a>
-        <a href="{{ route('user.fasilitas') }}">Fasilitas</a>
-        <a href="{{ route('user.jurusan') }}">Jurusan</a>
-        <a href="{{ route('user.berita') }}">Berita</a>
-        <a href="{{ route('user.Ekstrakurikuler') }}">Ekstrakurikuler</a>
+        <div class="isi-navbar">
+            <a href="{{ url('/') }}">Beranda</a>
+            <a href="{{ route('user.fasilitas') }}">Fasilitas</a>
+            <a href="{{ route('user.jurusan') }}">Jurusan</a>
+            <a href="{{ route('user.berita') }}">Berita</a>
+            <a href="{{ route('user.Ekstrakurikuler') }}">Ekstrakurikuler</a>
+        </div>
     </div>
 
     <div class="body">
-
-        <nav class="navbar bg-light " style="width: 100%">
+        <nav class="navbar bg-primary " style="width: 100%">
             <div class="container-fluid">
-                <span style="cursor:pointer" onclick="openNav()">&#9776;</span>
-                <a class="logout" href="{{ url('login') }}">Login</a>
+                <span style="cursor:pointer; color: white;" onclick="openNav()">&#9776;</span>
+                <a class="login" href="{{ url('login') }}">Login</a>
             </div>
         </nav>
 
         <div class="body-top" style="text-align: center; margin-top: 20px; width: 100%">
             <h3>Yang Manakah Yang Harus Saya Pilih SMA Atau SMK?</h3>
             <p>Itu Tergantung Kalian Apakah Kalian Ingin Mengambil Keahlian Kerja Atau Kuliah, Masing-Masing Memiliki
-                Kelebihan
-                Dan kekurangan Maupun Itu SMK Ataupun SMA</p>
+                Kelebihan Dan kekurangan Maupun Itu SMK Ataupun SMA</p>
         </div>
 
         <h1 class="text-center container" style="margin-top: 20px; width: 100%;">SMA</h1>

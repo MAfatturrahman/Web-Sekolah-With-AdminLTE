@@ -15,7 +15,7 @@
             <br>
 
             <div class="my_card">
-                @if (auth()->user()->can('create-role'))
+                @if (auth()->user()->can('create-roles'))
                     <div class="tambah">
                         <a class="btn btn-success mb-2" href="{{ route('role.create') }}">Tambah</a>
                     </div>
@@ -30,19 +30,19 @@
                     foreach ($datas as $user) {
                         $btnEdit = auth()
                             ->user()
-                            ->can('edit-role')
+                            ->can('edit-roles')
                             ? '<a href="' . route('role.edit', $user->id) . '" class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit" ><i class="fa fa-lg fa-fw fa-pen"></i></a>'
                             : '';
                     
                         $btnDelete = auth()
                             ->user()
-                            ->can('delete-role')
+                            ->can('delete-roles')
                             ? '<button class="btn btn-xs btn-default text-danger mx-1 shadow" type="submit" title="Delete"><i class="fa fa-lg fa-fw fa-trash"></i></button>'
                             : '';
                     
                         $btnDetails = auth()
                             ->user()
-                            ->can('show-role')
+                            ->can('show-roles')
                             ? '<a href="' . route('role.show', $user->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>'
                             : '';
                     

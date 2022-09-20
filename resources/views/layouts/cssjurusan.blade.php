@@ -39,7 +39,7 @@
             z-index: 1;
             top: 0;
             left: 0;
-            background-color: #111;
+            background-color: #007bff;
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
@@ -49,19 +49,31 @@
             padding: 8px 8px 8px 32px;
             text-decoration: none;
             font-size: 12px;
-            color: #818181;
+            color: whitesmoke;
             display: block;
             transition: 0.3s;
         }
 
-        .logout {
-            font-size: 24px;
-            text-decoration: none;
+        .sidenav a:hover {
             color: black;
         }
 
-        .sidenav a:hover {
-            color: #f1f1f1;
+        .isi-navbar a:hover {
+            color: white;
+            background-color: #2a91ff;
+            margin-left: 5px;
+            margin-right: 17px;
+            border-radius: 10px;
+        }
+
+        .login {
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .login:hover {
+            color: black;
         }
 
         .sidenav .closebtn {
@@ -87,7 +99,6 @@
             }
         }
 
-
         .my_card_smk {
             display: flex;
             width: 100%;
@@ -96,7 +107,7 @@
             margin-top: 40px;
             gap: .5rem;
             border-radius: 8px;
-            background-color: rgba(222, 222, 222, .5);
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
         }
 
         .my_card_sma {
@@ -108,7 +119,7 @@
             margin-bottom: 40px;
             gap: .5rem;
             border-radius: 8px;
-            background-color: rgba(222, 222, 222, .5);
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
         }
 
         .card_thumbnail {
@@ -131,7 +142,7 @@
 
         .footer {
             width: 100%;
-            background-color: black;
+            background-color: #007bff;
             padding-bottom: 10px;
             padding-top: 20px;
             padding-left: 45%;
@@ -141,12 +152,11 @@
         .footer p {
             font-size: 15px;
             text-align: center;
+            color: white
         }
 
         .footer p:hover {
-            /* color: white; */
-
-            color: white;
+            color: black;
             font-size: 15px;
         }
     </Style>

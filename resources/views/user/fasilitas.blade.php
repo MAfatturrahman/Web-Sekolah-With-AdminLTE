@@ -1,21 +1,23 @@
 @extends('layouts.index')
-@extends('layouts.cssindexG')
+@extends('layouts.cssFasilitas')
 
 @section('content')
     <link href="css/homepages.css" rel="stylesheet">
-    <nav class="navbar bg-light " style="width: 100%">
+    <nav class="navbar bg-primary" style="width: 100%">
         <div class="container-fluid">
-            <span style="cursor:pointer" onclick="openNav()">&#9776;</span>
-            <a class="logout" href="{{ url('login') }}">Login</a>
+            <span style="cursor:pointer; color: white;" onclick="openNav()">&#9776;</span>
+            <a class="login" href="{{ url('login') }}">Login</a>
         </div>
     </nav>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="{{ url('/') }}">Beranda</a>
-        <a href="{{ route('user.fasilitas') }}">Fasilitas</a>
-        <a href="{{ route('user.jurusan') }}">Jurusan</a>
-        <a href="{{ route('user.berita') }}">Berita</a>
-        <a href="{{ route('user.Ekstrakurikuler') }}">Ekstrakurikuler</a>
+        <div class="isi-navbar">
+            <a href="{{ url('/') }}">Beranda</a>
+            <a href="{{ route('user.fasilitas') }}">Fasilitas</a>
+            <a href="{{ route('user.jurusan') }}">Jurusan</a>
+            <a href="{{ route('user.berita') }}">Berita</a>
+            <a href="{{ route('user.Ekstrakurikuler') }}">Ekstrakurikuler</a>
+        </div>
     </div>
 
     <div class="body-top" style="text-align: center;">
@@ -94,7 +96,7 @@
                 <div class="card_content">
                     <h1 class="card_title" style="text-align: right">Toilet Guru</h1>
                     <p class="card_description" style="text-align: right">Fasilitas Toilet Guru Kami Sangatlah Bersih Dan
-                        Tersusun Rapih, Toiet Kami Juga Sangatlah Wangi Memiliki 12 Jenis Bau <br> Wangi-Wangian, Kebersihan
+                        Tersusun Rapih, Toiet Kami Juga Sangatlah Wangi Memiliki 12 Jenis Bau Wangi-Wangian, Kebersihan
                         Dan Kerapihan Tiolet Yang kami Miliki Sangatlah Terjamin</p>
                 </div>
                 <div class="card_thumbnail">

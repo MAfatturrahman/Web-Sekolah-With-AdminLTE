@@ -301,9 +301,9 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text' => 'History',
-            'url'  => 'history',
-            'can'  => 'view-history',
+            'text' => 'Audit log',
+            'url'  => 'audit',
+            'can'  => 'view-audit',
             'icon' => 'fa-solid fa-stopwatch',
         ],
         // [

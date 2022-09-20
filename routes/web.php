@@ -16,7 +16,8 @@ use App\Http\Controllers\HompagesController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\SppController;
 use App\Http\Controllers\RoleController;
-use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\AuditController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -117,10 +118,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/role/{id}', [RoleController::class, 'update'])->name('role.update')->middleware('can:edit-roles');
     //-------------------------------------------------------------------------------------------------
 
-    //History
+    //Audit
     //-------------------------------------------------------------------------------------------------
-    Route::get('/history', [HistoryController::class, 'index'])->name('history.index')->middleware('can:view-history');
-    Route::get('/history/{id}', [HistoryController::class, 'show'])->name('history.show')->middleware('can:show-history');
+    Route::get('/audit', [AuditController::class, 'index'])->name('audit.index')->middleware('can:view-audit');
+    Route::get('/audit/{id}', [AuditController::class, 'show'])->name('audit.show')->middleware('can:show-audit');
     //-------------------------------------------------------------------------------------------------
 });
 

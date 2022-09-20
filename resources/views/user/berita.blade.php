@@ -1,11 +1,11 @@
 @extends('layouts.index')
-@extends('layouts.cssindexG')
+@extends('layouts.cssBerita')
 
 @section('content')
-    <nav class="navbar bg-light " style="width: 100%">
+    <nav class="navbar bg-primary " style="width: 100%">
         <div class="container-fluid">
-            <span style="cursor:pointer" onclick="openNav()">&#9776;</span>
-            <a class="logout" href="{{ url('login') }}">Login</a>
+            <span style="cursor:pointer; color: white;" onclick="openNav()">&#9776;</span>
+            <a class="login" href="{{ url('login') }}">Login</a>
         </div>
     </nav>
 
@@ -25,11 +25,13 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="{{ url('/') }}">Beranda</a>
-        <a href="{{ route('user.fasilitas') }}">Fasilitas</a>
-        <a href="{{ route('user.jurusan') }}">Jurusan</a>
-        <a href="{{ route('user.berita') }}">Berita</a>
-        <a href="{{ route('user.Ekstrakurikuler') }}">Ekstrakurikuler</a>
+        <div class="isi-navbar">
+            <a href="{{ url('/') }}">Beranda</a>
+            <a href="{{ route('user.fasilitas') }}">Fasilitas</a>
+            <a href="{{ route('user.jurusan') }}">Jurusan</a>
+            <a href="{{ route('user.berita') }}">Berita</a>
+            <a href="{{ route('user.Ekstrakurikuler') }}">Ekstrakurikuler</a>
+        </div>
     </div>
 
     <div class="footer">

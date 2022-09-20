@@ -60,8 +60,8 @@ class RoleSeeder extends Seeder
             'edit-roles',
             'show-roles',
             'delete-roles',
-            'view-history',
-            'show-history',
+            'view-audit',
+            'show-audit',
         ]);
 
         $Admin->givePermissionTo([

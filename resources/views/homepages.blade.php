@@ -1,24 +1,37 @@
 @extends('layouts.index')
-@extends('layouts.css')
+@extends('layouts.cssHomePages')
 
 @section('content')
-    <nav class="navbar bg-light " style="width: 100%">
+    <nav class="navbar bg-primary " style="width: 100%">
         <div class="container-fluid">
-            <span style="cursor:pointer" onclick="openNav()">&#9776;</span>
-            <a class="logout" href="{{ url('login')}}">Login</a>
+            <span style="cursor:pointer; color:white;" onclick="openNav()">&#9776;</span>
+            <a class="login" href="{{ url('login') }}">Login</a>
         </div>
     </nav>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="{{ url('/') }}">Beranda</a>
-        <a href="{{ route('user.fasilitas') }}">Fasilitas</a>
-        <a href="{{ route('user.jurusan') }}">Jurusan</a>
-        <a href="{{ route('user.berita') }}">Berita</a>
-        <a href="{{ route('user.Ekstrakurikuler') }}">Ekstrakurikuler</a>
+        <div class="isi-navbar">
+            <a href="{{ url('/') }}">Beranda</a>
+            <a href="{{ route('user.fasilitas') }}">Fasilitas</a>
+            <a href="{{ route('user.jurusan') }}">Jurusan</a>
+            <a href="{{ route('user.berita') }}">Berita</a>
+            <a href="{{ route('user.Ekstrakurikuler') }}">Ekstrakurikuler</a>
+        </div>
     </div>
 
     <div class="img">
         <h1>Selamat Datang Di Website Sekolah Kami <br> Sekolah Negeri</h1>
+    </div>
+
+    <div class="sambutan">
+        <p class="title-sambutan">
+            Salam hangat dari kapala sekolah negeri
+        </p>
+        <p>Assalamu'alaikum Warahmatullahi Wabarakaatuh.
+            Salam sejahtera untuk kita semua. Selamat datang di website sekolah negeri. Website ini dibangun sebagai sarana
+            atau media informasi dan komunikasi sekolah, karena sejalan dengan perkembangan teknologi industri 4.0 yang
+            berguna untuk memudahkan mencari informasi tentang sekolah negri. Kualitas layanan menjadi salah satu misi
+            sekolah dan kaitannya dengan transparansi dan akuntabilitas sekolah.</p>
     </div><br>
 
     <div class="body-top" style="text-align: center;">
@@ -46,6 +59,58 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="body-top-space">
+            <h3>Sejarah Sekolah Negeri</h3>
+            <div class="my_card">
+                <p>Persetujuan Renville yang ditandatangani pada tanggal 17 Januari 1948, membuka peluang bagi guru-guru
+                    yang
+                    tergabung dalam Serikat Guru Indonesia (SGI) untuk mendirikan SMP swasta yang diselenggarakan pada
+                    petang
+                    hari.<br><br>
+
+                    Sekolah ini diberi nama SMP Petang. SMP tersebut diselenggarakan oleh SGI dan bertempat di Europese
+                    Lagere
+                    School, Logeweb 3 (Kini jalan Wastukencana).<br><br>
+
+                    SMP Petang rencananya akan dibuka tanggal 17 Agustus 1948 yang dipimpin oleh Abdurrahman Natadiria.
+                    Namun,
+                    menjelang pembukaan ternyata Abdurrahman Natadiria ditangkap Belanda, akhirnya diputuskan bahwa untuk
+                    sementara R. Soetardjo Sindoemintardjo ditunjuk sebagai kepala sekolah.<br><br>
+
+                    Setelah Belanda melakukan Agresi Militer II pada 19 Desember 1948, peserta didk SMP Petang semakin
+                    bertambah
+                    banyak. Setelah sekolah berjalan beberapa bulan, kesulitan-kesulitan mulai muncul. Hal ini disebabkan
+                    kurangnya perhatian dari SGI dan menyerahkan sepenuhnya tanggung jawab pengelolaan sekolah kepada kepala
+                    sekolah dan guruguru SMP Petang, mengingat biaya untuk memenuhi kebutuhan tersebut tidak ada, dan
+                    mengandalkan kesetiaan maupun kerelaan orang tua siswa juga tidak mungkin, karena para orang tua siswa
+                    pin
+                    baru saja kehilangan harta benda mereka akibat mengungsi. Maka, untuk mengatasi kesulitan dan mencari
+                    jalan
+                    keluarnya, R. Soetardjo Sindoemintardjo memprakarsai diadakannya suatu pertemuan pada 1 Mei 1949 yang
+                    bertempat di Gedung Koperasi Simpan Pinjam Himpunan Saudara di Jalan Dalem Kaum Bandung.<br><br>
+
+                    Pertemuan yang dilandasi semangat perjuangan itu dihadiri oleh tokoh pendidikan, sosial, koperasi,
+                    wartawan,
+                    dan orang tua siswa, serta perwakilan dari sekolah untuk membentuk panita yang akan merumuskan strategi
+                    dan
+                    rencana membentuk badan pengelola sekolah. Panitia tersebut terdiri atas : R. Jaman Sudjana Prawira,
+                    Rochdi
+                    Partaatmadja, Suryo Argawisastra, R.E. Soewitaatmadja, Wiriaatmadja, Sain Nuryokusumo, Sudirjdo,
+                    Barastan
+                    Wiriaatmadja, dan R. Soetardjo Sindoemintardjo (mewakili sekolah).<br><br>
+
+                    Panitia itulah yang menyimpulkan dibentuknya suatu badan pengelola sekolah yang diberi nama “Badan
+                    Perguruan
+                    Indonesia” yang disingkat BPI dan berbentuk yayasan. Susunan kepengurusan yayasan yang disepakati adalah
+                    Ketua I : R. Jaman Sudjana Prawira, Ketua II : R. Sajoeti Wangsadikoesoemah, Ketua III : R. Soetardjo
+                    Sindoemintardjo, Sekretaris : Rochdi Partaatmadja, Bendahara : Soeryo Argawisatra.<br><br></p>
+            </div>
+        </div>
+    </div>
+
+
 
     <div class="container">
         <div class="body-top-space">

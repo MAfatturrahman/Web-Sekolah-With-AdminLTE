@@ -44,8 +44,8 @@ class PermissionTableSeeder extends Seeder
             'edit-roles',
             'show-roles',
             'delete-roles',
-            'view-history',
-            'show-history',
+            'view-audit',
+            'show-audit',
         ];
 
         foreach ($permissions as $permission) {
