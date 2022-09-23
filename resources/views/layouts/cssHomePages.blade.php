@@ -117,6 +117,21 @@
             padding: 1rem;
         }
 
+        .my_card_galeri_show {
+            width: 30%;
+            height: 50%;
+            padding: 10px 20px 20px 20px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+        }
+
+        .foto {
+            height: 50%;
+            width: 50%;
+        }
+
         .body-top p {
             color: gray;
             margin-bottom: 20px;

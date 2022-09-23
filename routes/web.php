@@ -10,7 +10,8 @@ use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\BeritaUController;
-use App\Http\Controllers\VisiController;
+use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\GaleriUController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\HompagesController;
 use App\Http\Controllers\ProfilController;
@@ -85,6 +86,17 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('/spp/{id}', [SppController::class, 'update'])->name('spp.update')->middleware('can:edit-spp');
     //-------------------------------------------------------------------------------------------------
 
+    //Galeri
+    //-------------------------------------------------------------------------------------------------
+    Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri.index')->middleware('can:view-galeri');
+    Route::get('/galeri/create', [GaleriController::class, 'create'])->name('galeri.create')->middleware('can:create-galeri');
+    Route::get('/galeri/{id}/edit', [GaleriController::class, 'edit'])->name('galeri.edit')->middleware('can:edit-galeri');
+    Route::get('/galeri/{id}', [GaleriController::class, 'show'])->name('galeri.show')->middleware('can:show-galeri');
+    Route::delete('/galeri/{id}', [GaleriController::class, 'destroy'])->name('galeri.destroy')->middleware('can:delete-galeri');
+    Route::post('/galeri', [GaleriController::class, 'store'])->name('galeri.store')->middleware('can:create-galeri');
+    Route::put('/galeri/{id}', [GaleriController::class, 'update'])->name('galeri.update')->middleware('can:edit-galeri');
+    //-------------------------------------------------------------------------------------------------
+
     //Berita
     //-------------------------------------------------------------------------------------------------
     Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index')->middleware('can:view-berita');
@@ -130,7 +142,7 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/Homepages', [HompagesController::class, 'index'])->name('homepages');
 Route::get('/Fasilitas', [FasilitasController::class, 'fasilitas'])->name('user.fasilitas');
 Route::get('/Jurusan', [JurusanController::class, 'jurusan'])->name('user.jurusan');
+Route::get('/Galeri', [GaleriUController::class, 'index'])->name('user.galeri');
 Route::get('/Berita', [BeritaUController::class, 'berita'])->name('user.berita');
-Route::get('/Visi', [VisiController::class, 'visi'])->name('user.visi');
 Route::get('/Ekstrakurikuler', [EkstrakurikulerController::class, 'Ekstrakurikuler'])->name('user.Ekstrakurikuler');
 //-------------------------------------------------------------------------------------------------

@@ -8,6 +8,7 @@ use App\Models\petugas;
 use App\Models\murid;
 use App\Models\berita;
 use App\Models\User;
+use App\Models\galeri;
 
 
 class HomeController extends Controller
@@ -24,6 +25,7 @@ class HomeController extends Controller
         $dataGuru = guru::all();
         $dataPetugas = petugas::all();
         $dataMurid = Murid::all();
+        $dataGaleri = galeri::all();
         $dataBerita = Berita::all();
         $dataUser = User::all();
 
@@ -31,6 +33,7 @@ class HomeController extends Controller
             'dataGuru' => $dataGuru,
             'dataPetugas' => $dataPetugas,
             'dataMurid' => $dataMurid,
+            'dataGaleri' => $dataGaleri,
             'dataBerita' => $dataBerita,
             'dataUser' => $dataUser,
         ]);

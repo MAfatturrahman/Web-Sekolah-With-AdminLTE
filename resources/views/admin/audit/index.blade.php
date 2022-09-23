@@ -11,7 +11,7 @@
 
                 {{-- Table Petugas --}}
                 @php
-                    $heads = [['label' => 'No', 'no-export' => true, 'width' => 5], 'Nama', 'Event', 'Nilai Lama', 'Nilai Baru', 'URL', 'Tanggal', ['label' => 'Actions', 'no-export' => true, 'width' => 5]];
+                    $heads = [['label' => 'No', 'no-export' => true, 'width' => 5], 'Nama', 'Event', 'URL', 'Tanggal', ['label' => 'Actions', 'no-export' => true, 'width' => 5]];
                     $no = 1;
                     
                     $dataAudit = [];
@@ -48,7 +48,7 @@
                             ->can('show-audit')
                             ? '<a href="' . route('audit.show', $audit->id) . '" class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details"><i class="fa fa-lg fa-fw fa-eye"></i></a>'
                             : '';
-                        $dataAudit[] = [$no++, $user::find($audit->user_id)->name, $audit->event, $oldValues, $newValues, $audit->url, $audit->created_at, '<form class="d-flex justify-content-center" >' . $btnDetails . '</form>'];
+                        $dataAudit[] = [$no++, $user::find($audit->user_id)->name, $audit->event, $audit->url, $audit->created_at, '<form class="d-flex justify-content-center" >' . $btnDetails . '</form>'];
                     }
                     
                     $config = [

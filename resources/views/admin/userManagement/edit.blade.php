@@ -22,24 +22,6 @@
                 <div class="d-flex gap-1">
                     <br><input class="form-control col-sm-6" name="email" placeholder="Email" value="{{ $user->email }}"
                         required><br>
-                    {{-- <x-adminlte-select2 name="role" label-class="text-lightblue" igroup-size="lg"
-                        data-placeholder="Pilih Role ..." fgroup-class="col-sm-6">
-                        <x-slot name="prependSlot">
-                            <div class="input-group-text bg-gradient-info">
-                                <i class="fas fa-fw fa-lock"></i>
-                            </div>
-                        </x-slot>
-                        </option>
-                        <option selected disabled value={{ old('name', $user->getRoleNames()[0]) }}>
-                            {{ old('name', $user->getRoleNames()[0]) }}</option>
-                        @foreach ($roles as $role)
-                            @if ($role->id == 1)
-                                <option disabled value="{{ $role->name }}">{{ $role->name }}</option>
-                            @else
-                                <option value="{{ $role->name }}">{{ $role->name }}</option>
-                            @endif
-                        @endforeach
-                    </x-adminlte-select2> --}}
 
                     <x-adminlte-select2 name="role" label-class="text-lightblue" igroup-size="md"
                         data-placeholder="Pilih Role ..." fgroup-class="col-sm-6">
@@ -51,7 +33,6 @@
                         </option>
                         <option selected disabled value={{ old('name', $user->getRoleNames()[0]) }}>
                             {{ old('name', $user->getRoleNames()[0]) }}</option>
-                        {{-- <option selected disabled>Pilih Role</option> --}}
                         @foreach ($roles as $role)
                             @if ($role->id == 1)
                                 <option disabled value="{{ $role->name }}">{{ $role->name }}</option>

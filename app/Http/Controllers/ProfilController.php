@@ -39,19 +39,19 @@ class ProfilController extends Controller
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
+            'password_baru'
         ]);
 
         $creds = ['email' => $request->email, 'password' => $request->password];
 
-
-        if (!Auth::attempt($creds)) return redirect()->route('profil.index')->with('alert', 'Password Salah');
+        if (!Auth::attempt($creds)) return redirect()->route('profil.index')->with('failed', 'Password Salah');
 
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' => $request->password_baru == null ? Hash::make($request->password) : Hash::make($request->password_baru)
         ]);
 
-        return redirect('profil');
+        return redirect('profil')->with('success', 'Password Berhasil Di Ganti');
     }
 }

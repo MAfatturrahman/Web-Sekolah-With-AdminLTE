@@ -1,5 +1,6 @@
 @extends('adminlte::page')
 @extends('CSS.cssberita')
+
 @section('content')
     <br>
     <div class="container gap-4">

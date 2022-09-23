@@ -14,6 +14,7 @@
             <a href="{{ url('/') }}">Beranda</a>
             <a href="{{ route('user.fasilitas') }}">Fasilitas</a>
             <a href="{{ route('user.jurusan') }}">Jurusan</a>
+            <a href="{{ route('user.galeri') }}">Galeri</a>
             <a href="{{ route('user.berita') }}">Berita</a>
             <a href="{{ route('user.Ekstrakurikuler') }}">Ekstrakurikuler</a>
         </div>
@@ -25,7 +26,7 @@
 
     <div class="sambutan">
         <p class="title-sambutan">
-            Salam hangat dari kapala sekolah negeri
+            Salam hangat dari kepala sekolah negeri
         </p>
         <p>Assalamu'alaikum Warahmatullahi Wabarakaatuh.
             Salam sejahtera untuk kita semua. Selamat datang di website sekolah negeri. Website ini dibangun sebagai sarana

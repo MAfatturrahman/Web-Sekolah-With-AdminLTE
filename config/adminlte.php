@@ -279,6 +279,12 @@ return [
             'icon' => 'fa-solid fa-credit-card',
         ],
         [
+            'text' => 'Galeri',
+            'url'  => 'galeri',
+            'can'  => 'view-galeri',
+            'icon' => 'fa-solid fa-newspaper',
+        ],
+        [
             'text' => 'Berita',
             'url'  => 'berita',
             'can'  => 'view-berita',

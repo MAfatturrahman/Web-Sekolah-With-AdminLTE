@@ -1,27 +1,13 @@
 @extends('layouts.index')
-@extends('layouts.cssBerita')
+@extends('layouts.cssHomePages')
 
 @section('content')
     <nav class="navbar bg-primary " style="width: 100%">
         <div class="container-fluid">
-            <span style="cursor:pointer; color: white;" onclick="openNav()">&#9776;</span>
+            <span style="cursor:pointer; color:white;" onclick="openNav()">&#9776;</span>
             <a class="login" href="{{ url('login') }}">Login</a>
         </div>
     </nav>
-
-    @foreach ($datas as $key => $values)
-        <div class="container">
-            <div class="my_card">
-                <div class="card_thumbnail">
-                    <img src="{{ $values->gambar }}">
-                </div>
-                <div class="card_content">
-                    <h1 class="card_title" style="text-align: left">{{ $values->title }}</h1>
-                    <p class="card_description" style="text-align: left">{{ $values->deskripsi }}</p>
-                </div>
-            </div>
-        </div>
-    @endforeach
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -35,8 +21,16 @@
         </div>
     </div>
 
-    <div class="footer">
-        <p>COPYRIGHT ©2022</p>
+    <div class="container d-flex gap-3 mt-5 flex-wrap justify-content-center">
+        @foreach ($galeri as $key => $values)
+            <div class="my_card_galeri_show">
+                <h4 class="card-header text-primary mb-2 text-center">{{ $values->judul }}</h4>
+                <div class="card-body">
+                    <img class="w-100 h-100" src="{{ $values->foto }}">
+                    <p class="mt-2">{{ $values->deskripsi }}</p>
+                </div>
+            </div>
+        @endforeach
     </div>
 @endsection
 

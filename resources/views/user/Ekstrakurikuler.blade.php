@@ -15,6 +15,7 @@
             <a href="{{ url('/') }}">Beranda</a>
             <a href="{{ route('user.fasilitas') }}">Fasilitas</a>
             <a href="{{ route('user.jurusan') }}">Jurusan</a>
+            <a href="{{ route('user.galeri') }}">Galeri</a>
             <a href="{{ route('user.berita') }}">Berita</a>
             <a href="{{ route('user.Ekstrakurikuler') }}">Ekstrakurikuler</a>
         </div>
@@ -40,39 +41,39 @@
         </div><br><br>
 
         <div class="body-top-space">
-            <h3 style="font-size: 20px;">Daftar Ekstrakurikuler SMK</h3>
+            <h3>Daftar Ekstrakurikuler</h3>
         </div>
 
-        <div style="line-height: 0.2;">
-            <p> - Akustik </p>
-            <p> - Animasi </p>
-            <p> - Futsal </p>
-            <p> - Basket </p>
-            <p> - Muaythai </p>
-            <p> - Mikrotik </p>
-            <p> - Modern Dance </p>
-            <p> - Pramuka </p>
-            <p> - Rohis </p>
-            <p> - Japanese Club </p>
-            <p> - English Club </p>
-            <p> - Math Club </p>
-            <p> - Panahan </p>
-            <p> - Softball </p>
-        </div><br><br>
+        <div class="d-flex gap-5 mb-3">
+            <div class="d-flex flex-column" style="line-height: 0.2;">
+                <h4>-SMK-</h4>
+                <p> - Akustik </p>
+                <p> - Animasi </p>
+                <p> - Futsal </p>
+                <p> - Basket </p>
+                <p> - Muaythai </p>
+                <p> - Mikrotik </p>
+                <p> - Modern Dance </p>
+                <p> - Pramuka </p>
+                <p> - Rohis </p>
+                <p> - Japanese Club </p>
+                <p> - English Club </p>
+                <p> - Math Club </p>
+                <p> - Panahan </p>
+                <p> - Softball </p>
+            </div>
 
-        <div class="body-top-space">
-            <h3 style="font-size: 20px;">Daftar Ekstrakurikuler SMA</h3>
-        </div>
-
-        <div style="line-height: 0.2; margin-bottom: 30px;">
-            <p> - Pendidikan Kepramukaan </p>
-            <p> - Tenis Meja </p>
-            <p> - Seni Tari </p>
-            <p> - Teater Jubah Macan </p>
-            <p> - PHC (Padmanaba Hiking Club) /Pecinta Alam </p>
-            <p> - Paspad/ Paduan Suara </p>
-            <p> - Robotik </p>
-            <p> - Pramuka </p>
+            <div class="d-flex flex-column" style="line-height: 0.2; margin-bottom: 30px;">
+                <h4>-SMA-</h4>
+                <p> - Pendidikan Kepramukaan </p>
+                <p> - Tenis Meja </p>
+                <p> - Seni Tari </p>
+                <p> - Teater Jubah Macan </p>
+                <p> - PHC (Padmanaba Hiking Club) /Pecinta Alam </p>
+                <p> - Paspad/ Paduan Suara </p>
+                <p> - Robotik </p>
+                <p> - Pramuka </p>
+            </div>
         </div>
 
     </div>

@@ -21,6 +21,30 @@
             box-shadow: 0px 5px 15px 0px;
         }
 
+        .my_card_galeri {
+            width: 50%;
+            height: 50%;
+            padding: 30px;
+            margin-top: 5%;
+            border-radius: 8px;
+            box-shadow: 0px 5px 15px 0px;
+        }
+
+        .my_card_galeri_show {
+            width: 50%;
+            height: 70%;
+            padding: 30px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 5px 15px 0px;
+        }
+
+        .foto {
+            height: 50%;
+            width: 50%;
+        }
+
         .my_card_dasbord {
             width: 23%;
             height: 50%;

@@ -7,9 +7,11 @@
             <div class="my_card">
                 <form method="POST" action="{{ url('guru') }}">
                     @csrf
+
                     @if (Session::has('alert'))
                         <div class="alert alert-danger">{{ session::get('alert') }}</div>
                     @endif
+
                     <input class="form-control" style="width: 100%;" type="text" name="nama" placeholder="Nama"
                         required><br>
                     <div class="d-flex">

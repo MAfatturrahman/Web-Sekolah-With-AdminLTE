@@ -13,6 +13,7 @@
         $jumlahGuru = count($dataGuru);
         $jumlahPetugas = count($dataPetugas);
         $jumlahMurid = count($dataMurid);
+        $jumlahGaleri = count($dataGaleri);
         $jumlahBerita = count($dataBerita);
         $jumlahUser = count($dataUser);
     @endphp
@@ -46,6 +47,18 @@
         </div>
 
         <div class="my_card_dasbord">
+            <h4 class="card-header text-primary">Galeri</h4>
+            <div class="card-body">
+                <p>Jumlah Galeri Yang Dimiliki Oleh Sekolah Negeri Saat Ini Adalah</p>
+                <h5>{{ $jumlahGaleri }} Galeri</h5><br>
+                <a href="/galeri" class="btn btn-primary">Selengkapnya</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="d-flex gap-3">
+        <div class="my_card_dasbord">
             <h4 class="card-header text-primary">Berita</h4>
             <div class="card-body">
                 <p>Jumlah Berita Yang Dimiliki Oleh Sekolah Negeri Saat Ini Adalah</p>
@@ -53,9 +66,7 @@
                 <a href="/berita" class="btn btn-primary">Selengkapnya</a>
             </div>
         </div>
-    </div>
 
-    <div class="d-flex gap-3">
         <div class="my_card_dasbord">
             <h4 class="card-header text-primary">Akun</h4>
             <div class="card-body">
