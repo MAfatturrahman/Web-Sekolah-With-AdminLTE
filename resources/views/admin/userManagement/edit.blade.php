@@ -17,11 +17,14 @@
             <form method="POST" action="{{ route('userManagement.update', $user->id) }}">
                 @csrf
                 @method('PUT')
-                <br><input class="form-control" style="width: 100%;" name="name" placeholder="Nama"
-                    value="{{ $user->name }}" required><br>
+
+                <div class="d-flex mb-2 gap-3">
+                    <input class="form-control" name="image" placeholder="Gambar" value="{{ $user->image }}" required>
+                    <input class="form-control" name="name" placeholder="Nama" value="{{ $user->name }}" required>
+                </div>
                 <div class="d-flex gap-1">
-                    <br><input class="form-control col-sm-6" name="email" placeholder="Email" value="{{ $user->email }}"
-                        required><br>
+                    <input class="form-control col-sm-6" name="email" placeholder="Email" value="{{ $user->email }}"
+                        required>
 
                     <x-adminlte-select2 name="role" label-class="text-lightblue" igroup-size="md"
                         data-placeholder="Pilih Role ..." fgroup-class="col-sm-6">

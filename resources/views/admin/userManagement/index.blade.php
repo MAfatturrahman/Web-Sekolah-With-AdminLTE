@@ -14,7 +14,7 @@
 
             <p class="judul">Tentang Pengguna</p>
 
-            @if (auth()->user()->can('create-create-user-management'))
+            @if (auth()->user()->can('create-user-management'))
                 <div class="tambah">
                     <a class="btn btn-success mb-2" href="{{ route('userManagement.create') }}">Tambah</a>
                 </div>

@@ -14,6 +14,8 @@
             <a href="{{ url('/') }}">Beranda</a>
             <a href="{{ route('user.fasilitas') }}">Fasilitas</a>
             <a href="{{ route('user.jurusan') }}">Jurusan</a>
+            <a href="{{ route('user.prestasi') }}">Prestasi</a>
+            <a href="{{ route('user.pelajaran') }}">Pelajaran</a>
             <a href="{{ route('user.galeri') }}">Galeri</a>
             <a href="{{ route('user.berita') }}">Berita</a>
             <a href="{{ route('user.Ekstrakurikuler') }}">Ekstrakurikuler</a>

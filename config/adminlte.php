@@ -67,7 +67,7 @@ return [
     'usermenu_enabled' => true,
     'usermenu_header' => false,
     'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => false,
+    'usermenu_image' => true,
     'usermenu_desc' => false,
     'usermenu_profile_url' => false,
 
@@ -279,10 +279,22 @@ return [
             'icon' => 'fa-solid fa-credit-card',
         ],
         [
+            'text' => 'Prestasi',
+            'url'  => 'prestasi',
+            'can'  => 'view-prestasi',
+            'icon' => 'fa-solid fa-trophy',
+        ],
+        [
+            'text' => 'Pelajaran',
+            'url'  => 'pelajaran',
+            'can'  => 'view-pelajaran',
+            'icon' => 'fa-solid fa-book',
+        ],
+        [
             'text' => 'Galeri',
             'url'  => 'galeri',
             'can'  => 'view-galeri',
-            'icon' => 'fa-solid fa-newspaper',
+            'icon' => 'fa-solid fa-images',
         ],
         [
             'text' => 'Berita',

@@ -13,12 +13,13 @@
                     <div class="alert alert-danger">{{ Session::get('alert') }}</div>
                 @endif
 
-                <input class="form-control" style="width: 100%;" type="text" name="name" placeholder="Nama" required><br>
-                <div class="d-flex">
-                    <br><input class="form-control me-1" style="width: 50%;" type="text" name="email"
-                        placeholder="Email" required><br>
-                    <br><input class="form-control ms-1 me-1" style="width: 50%;" type="text" name="password"
-                        placeholder="Password" required>
+                <div class="d-flex mb-2 gap-3">
+                    <input class="form-control" type="text" name="image" placeholder="Gambar" required>
+                    <input class="form-control" type="text" name="name" placeholder="Nama" required>
+                </div>
+                <div class="d-flex mb-2 gap-3">
+                    <input class="form-control" type="text" name="email" placeholder="Email" required>
+                    <input class="form-control" type="text" name="password" placeholder="Password" required>
                 </div>
 
                 <x-adminlte-select2 name="role" label="Role" label-class="text-lightblue" igroup-size="lg"

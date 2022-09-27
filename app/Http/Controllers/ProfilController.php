@@ -9,11 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class ProfilController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Untuk Memanggil Halaman Profile (Adminpages)
     public function index()
     {
         $id = Auth::id();
@@ -23,19 +19,22 @@ class ProfilController extends Controller
         ));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Untuk Mengupdate Halaman Profile (Adminpages)
     public function update(Request $request, $id)
     {
 
         $user = User::find($id);
+        $user->image = $request->image;
+        if ($request->file('image')) {
+            $file = $request->file('image');
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('public/Image'), $filename);
+            $user['image'] = $filename;
+        }
+        $user->save();
 
         $this->validate($request, [
+            'image',
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',

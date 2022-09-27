@@ -31,7 +31,12 @@ class PenggunaController extends Controller
     //Untuk Menyimpan Data User
     public function store(Request $request)
     {
+        $user = new user;
+        $user->image = $request->image;
+        $user->save();
+
         $request->validate([
+            'image' => 'required',
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
@@ -79,6 +84,7 @@ class PenggunaController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
+        $user->image = $request->image;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = $request->password;

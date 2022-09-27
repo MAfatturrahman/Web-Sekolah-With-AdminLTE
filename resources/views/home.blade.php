@@ -13,6 +13,8 @@
         $jumlahGuru = count($dataGuru);
         $jumlahPetugas = count($dataPetugas);
         $jumlahMurid = count($dataMurid);
+        $jumlahPrestasi = count($dataPrestasi);
+        $jumlahPelajaran = count($dataPelajaran);
         $jumlahGaleri = count($dataGaleri);
         $jumlahBerita = count($dataBerita);
         $jumlahUser = count($dataUser);
@@ -38,6 +40,27 @@
         </div>
 
         <div class="my_card_dasbord">
+            <h4 class="card-header text-primary">Prestasi</h4>
+            <div class="card-body">
+                <p>Jumlah Prestasi Yang Dimiliki Oleh Sekolah Negeri Saat Ini Adalah</p>
+                <h5>{{ $jumlahPrestasi }} Prestasi</h5><br>
+                <a href="/prestasi" class="btn btn-primary">Selengkapnya</a>
+            </div>
+        </div>
+
+        <div class="my_card_dasbord">
+            <h4 class="card-header text-primary">Pelajaran</h4>
+            <div class="card-body">
+                <p>Jumlah Pelajaran Yang Dimiliki Oleh Sekolah Negeri Saat Ini Adalah</p>
+                <h5>{{ $jumlahPelajaran }} Pelajaran</h5><br>
+                <a href="/pelajaran" class="btn btn-primary">Selengkapnya</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="d-flex gap-3">
+        <div class="my_card_dasbord">
             <h4 class="card-header text-primary">Murid</h4>
             <div class="card-body">
                 <p>Jumlah Murid Yang Dimiliki Oleh Sekolah Negeri Saat Ini Adalah</p>
@@ -55,9 +78,6 @@
             </div>
         </div>
 
-    </div>
-
-    <div class="d-flex gap-3">
         <div class="my_card_dasbord">
             <h4 class="card-header text-primary">Berita</h4>
             <div class="card-body">

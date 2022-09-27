@@ -15,7 +15,7 @@
                 <input class="form-control" style="width: 100%;" type="text" name="name" placeholder="Nama Role"
                     required><br>
 
-                <div class="d-flex gap-2 flex-column flex-md-row">
+                <div class="d-flex gap-4 flex-column flex-md-row">
                     {{-- Guru --}}
                     <div class="d-flex flex-column lh-1">
                         <div class="form-group">
@@ -116,6 +116,90 @@
                     </div>
                     {{-- SPP End --}}
 
+                    {{-- Prestasi --}}
+                    <div class="d-flex flex-column lh-1">
+                        <div class="form-group">
+                            <h4>Prestasi</h4>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="prestasi" name="permission[]" value="view-prestasi">
+                            <label for="prestasi">view-prestasi</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="prestasi" name="permission[]" value="create-prestasi">
+                            <label for="prestasi">create-prestasi</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="prestasi" name="permission[]" value="edit-prestasi">
+                            <label for="prestasi">edit-prestasi</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="prestasi" name="permission[]" value="show-prestasi">
+                            <label for="prestasi">show-prestasi</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="prestasi" name="permission[]" value="delete-prestasi">
+                            <label for="prestasi">delete-prestasi</label>
+                        </div>
+                    </div>
+                    {{-- Prestasi End --}}
+
+                    {{-- Pelajaran --}}
+                    <div class="d-flex flex-column lh-1">
+                        <div class="form-group">
+                            <h4>Pelajaran</h4>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="pelajaran" name="permission[]" value="view-pelajaran">
+                            <label for="pelajaran">view-pelajaran</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="pelajaran" name="permission[]" value="create-pelajaran">
+                            <label for="pelajaran">create-pelajaran</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="pelajaran" name="permission[]" value="edit-pelajaran">
+                            <label for="pelajaran">edit-pelajaran</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="pelajaran" name="permission[]" value="show-pelajaran">
+                            <label for="pelajaran">show-pelajaran</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="pelajaran" name="permission[]" value="delete-pelajaran">
+                            <label for="pelajaran">delete-pelajaran</label>
+                        </div>
+                    </div>
+                    {{-- Pelajaran End --}}
+
+                    {{-- Galeri --}}
+                    <div class="d-flex flex-column lh-1">
+                        <div class="form-group">
+                            <h4>Galeri</h4>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="galeri" name="permission[]" value="view-galeri">
+                            <label for="galeri">view-galeri</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="galeri" name="permission[]" value="create-galeri">
+                            <label for="galeri">create-galeri</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="galeri" name="permission[]" value="edit-galeri">
+                            <label for="galeri">edit-galeri</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="galeri" name="permission[]" value="show-galeri">
+                            <label for="galeri">show-galeri</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="galeri" name="permission[]" value="delete-galeri">
+                            <label for="galeri">delete-galeri</label>
+                        </div>
+                    </div>
+                    {{-- Galeri End --}}
+
                     {{-- Berita --}}
                     <div class="d-flex flex-column lh-1">
                         <div class="form-group">
@@ -144,6 +228,9 @@
                     </div>
                     {{-- Berita End --}}
 
+                </div>
+
+                <div class="d-flex gap-4 flex-column flex-md-row">
                     {{-- User-Management --}}
                     <div class="d-flex flex-column lh-1">
                         <div class="form-group">
@@ -215,6 +302,7 @@
                         </div>
                     </div>
                     {{-- Audit End --}}
+
                 </div>
 
                 <div class="d-flex justify-content-between">

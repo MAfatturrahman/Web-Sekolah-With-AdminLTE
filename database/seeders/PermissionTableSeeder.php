@@ -37,6 +37,20 @@ class PermissionTableSeeder extends Seeder
             'view-spp',
             'edit-spp',
 
+            // Permission Prestasi
+            'view-prestasi',
+            'create-prestasi',
+            'edit-prestasi',
+            'show-prestasi',
+            'delete-prestasi',
+
+            // Permission Pelajaran
+            'view-pelajaran',
+            'create-pelajaran',
+            'edit-pelajaran',
+            'show-pelajaran',
+            'delete-pelajaran',
+
             // Permission Galeri
             'view-galeri',
             'create-galeri',

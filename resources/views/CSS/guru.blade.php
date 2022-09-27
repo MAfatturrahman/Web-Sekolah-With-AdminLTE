@@ -10,8 +10,34 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    {{-- <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script> --}}
     <title>Sekolah</title>
     <style>
+        /* .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #fff;
+        }
+
+        .preloader .loading {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font: 14px arial;
+        } */
+
+        .foto_profil {
+            border: 2px solid #000000;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
         .my_card {
             width: 100%;
             height: 50%;

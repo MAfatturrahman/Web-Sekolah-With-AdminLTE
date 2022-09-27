@@ -11,7 +11,7 @@
                 <br><input class="form-control" style="width: 100%;" name="name" placeholder="Nama"
                     value="{{ $role->name }}" required><br>
 
-                <div class="d-flex gap-2 flex-column flex-md-row">
+                <div class="d-flex gap-4 flex-column flex-md-row">
                     {{-- Guru --}}
                     <div class="d-flex flex-column lh-1">
                         <div class="form-group">
@@ -130,6 +130,105 @@
                     </div>
                     {{-- SPP End --}}
 
+                    {{-- Prestasi --}}
+                    <div class="d-flex flex-column lh-1">
+                        <div class="form-group">
+                            <h4>Prestasi</h4>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('view-prestasi', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="view-prestasi">
+                            <label for="role">view-prestasi</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('create-prestasi', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="create-prestasi">
+                            <label for="role">create-prestasi</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('edit-prestasi', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="edit-prestasi">
+                            <label for="role">edit-prestasi</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('show-prestasi', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="show-prestasi">
+                            <label for="role">show-prestasi</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('delete-prestasi', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="delete-prestasi">
+                            <label for="role">delete-prestasi</label>
+                        </div>
+                    </div>
+                    {{-- Prestasi End --}}
+
+                    {{-- Pelajaran --}}
+                    <div class="d-flex flex-column lh-1">
+                        <div class="form-group">
+                            <h4>Pelajaran</h4>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('view-pelajaran', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="view-pelajaran">
+                            <label for="role">view-pelajaran</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('create-pelajaran', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="create-pelajaran">
+                            <label for="role">create-pelajaran</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('edit-pelajaran', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="edit-pelajaran">
+                            <label for="role">edit-pelajaran</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('show-pelajaran', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="show-pelajaran">
+                            <label for="role">show-pelajaran</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('delete-pelajaran', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="delete-pelajaran">
+                            <label for="role">delete-pelajaran</label>
+                        </div>
+                    </div>
+                    {{-- Pelajaran End --}}
+
+                    {{-- Galeri --}}
+                    <div class="d-flex flex-column lh-1">
+                        <div class="form-group">
+                            <h4>Galeri</h4>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('view-galeri', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="view-galeri">
+                            <label for="role">view-galeri</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('create-galeri', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="create-galeri">
+                            <label for="role">create-galeri</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('edit-galeri', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="edit-galeri">
+                            <label for="role">edit-galeri</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('show-galeri', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="show-galeri">
+                            <label for="role">show-galeri</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" {{ in_array('delete-galeri', $permissions) ? 'checked' : '' }}
+                                name="permission[]" value="delete-galeri">
+                            <label for="role">delete-galeri</label>
+                        </div>
+                    </div>
+                    {{-- Galeri End --}}
+
                     {{-- Berita --}}
                     <div class="d-flex flex-column lh-1">
                         <div class="form-group">
@@ -163,6 +262,9 @@
                     </div>
                     {{-- Berita End --}}
 
+                </div>
+
+                <div class="d-flex gap-4 flex-column flex-md-row">
                     {{-- User-Management --}}
                     <div class="d-flex flex-column lh-1">
                         <div class="form-group">
@@ -246,6 +348,7 @@
                         </div>
                     </div>
                     {{-- Audit End --}}
+
                 </div>
 
                 <div class="d-flex justify-content-between">
@@ -255,4 +358,5 @@
             </form>
         </div>
     </div>
+    <br>
 @endsection
