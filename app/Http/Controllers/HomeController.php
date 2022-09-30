@@ -33,7 +33,7 @@ class HomeController extends Controller
         $dataBerita = Berita::all();
         $dataUser = User::all();
 
-        return view('home')->with([
+        return view('dashboard')->with([
             'dataGuru' => $dataGuru,
             'dataPetugas' => $dataPetugas,
             'dataMurid' => $dataMurid,

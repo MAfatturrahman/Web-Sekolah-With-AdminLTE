@@ -2,27 +2,7 @@
 @extends('layouts.cssjurusan')
 
 @section('content')
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="isi-navbar">
-            <a href="{{ url('/') }}">Beranda</a>
-            <a href="{{ route('user.fasilitas') }}">Fasilitas</a>
-            <a href="{{ route('user.jurusan') }}">Jurusan</a>
-            <a href="{{ route('user.prestasi') }}">Prestasi</a>
-            <a href="{{ route('user.pelajaran') }}">Pelajaran</a>
-            <a href="{{ route('user.galeri') }}">Galeri</a>
-            <a href="{{ route('user.berita') }}">Berita</a>
-            <a href="{{ route('user.Ekstrakurikuler') }}">Ekstrakurikuler</a>
-        </div>
-    </div>
-
     <div class="body">
-        <nav class="navbar bg-primary " style="width: 100%">
-            <div class="container-fluid">
-                <span style="cursor:pointer; color: white;" onclick="openNav()">&#9776;</span>
-                <a class="login" href="{{ url('login') }}">Login</a>
-            </div>
-        </nav>
 
         <div class="body-top" style="text-align: center; margin-top: 20px; width: 100%">
             <h3>Yang Manakah Yang Harus Saya Pilih SMA Atau SMK?</h3>

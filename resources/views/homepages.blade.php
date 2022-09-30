@@ -2,25 +2,12 @@
 @extends('layouts.cssHomePages')
 
 @section('content')
-    <nav class="navbar bg-primary " style="width: 100%">
-        <div class="container-fluid">
-            <span style="cursor:pointer; color:white;" onclick="openNav()">&#9776;</span>
-            <a class="login" href="{{ url('login') }}">Login</a>
-        </div>
-    </nav>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="isi-navbar">
-            <a href="{{ url('/') }}">Beranda</a>
-            <a href="{{ route('user.fasilitas') }}">Fasilitas</a>
-            <a href="{{ route('user.jurusan') }}">Jurusan</a>
-            <a href="{{ route('user.prestasi') }}">Prestasi</a>
-            <a href="{{ route('user.pelajaran') }}">Pelajaran</a>
-            <a href="{{ route('user.galeri') }}">Galeri</a>
-            <a href="{{ route('user.berita') }}">Berita</a>
-            <a href="{{ route('user.Ekstrakurikuler') }}">Ekstrakurikuler</a>
-        </div>
-    </div>
+    @php
+        $jumlahGuru = count($dataGuru);
+        $jumlahPetugas = count($dataPetugas);
+        $jumlahMurid = count($dataMurid);
+        $jumlahPrestasi = count($dataPrestasi);
+    @endphp
 
     <div class="img">
         <h1>Selamat Datang Di Website Sekolah Kami <br> Sekolah Negeri</h1>
@@ -113,7 +100,32 @@
         </div>
     </div>
 
-
+    <div class="mb-5">
+        <div class="jumlah">
+            <div class="d-flex flex-column align-items-center flex-md-row justify-content-md-around">
+                <div class="d-flex flex-column">
+                    <h5>Guru</h5>
+                    <p>Guru yang Dimiliki Oleh Sekolah Negeri</p>
+                    <h6><i class="fa-solid fa-chalkboard-user me-3"></i>{{ $jumlahGuru }}</h6>
+                </div>
+                <div class="d-flex flex-column">
+                    <h5>Petugas</h5>
+                    <p>Petugas Yang Dimiliki Oleh Sekolah Negeri</p>
+                    <h6><i class="fa-solid fa-stamp me-3"></i>{{ $jumlahPetugas }}</h6>
+                </div>
+                <div class="d-flex flex-column">
+                    <h5>Murid</h5>
+                    <p>Petugas Yang Dimiliki Oleh Sekolah Negeri</p>
+                    <h6><i class="fa-solid fa-graduation-cap me-3"></i>{{ $jumlahMurid }}</h6>
+                </div>
+                <div class="d-flex flex-column">
+                    <h5>Prestasi</h5>
+                    <P>Prestasi Yang Dimiliki Oleh Sekolah Negeri</P>
+                    <h6><i class="fa-solid fa-trophy me-3"></i>{{ $jumlahPrestasi }}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="body-top-space">
@@ -121,29 +133,25 @@
         </div>
     </div>
 
-    <div class="d-flex justify-content-between container gap-3">
+    <div class="d-flex justify-content-between flex-column flex-md-row container gap-3">
         <div class="my_card_misi">
-            <div class="d-flex flex-column align-items-center justify-content-center">
-                <h1>VISI</h1>
-                <p class="text-center">Menjadikan penyelenggara pendidikan berkualitas dan terpercaya.</p>
-            </div>
+            <h1>VISI</h1>
+            <p class="text-center">Menjadikan penyelenggara pendidikan berkualitas dan terpercaya.</p>
         </div>
 
         <div class="my_card_misi">
-            <div class="d-flex flex-column align-items-center justify-content-center">
-                <h1>MISI</h1>
-                <p class="text-center">Mewujudkan tata kelola, sistem pengendalian manajemen, dan sistem. <br>
-                    Pengawasan internal yang modern, efektif, dan efesien. <br>
-                    Menyalurkan dan Mendukung kreativitas peserta didik dengan sarana dan prasarana yang lengkap. <br>
-                    Mewujudkan budaya religi, jujur, disiplin, beretika, berestetika, pekerja keras, kreatif, inovatif,
-                    komptetitif, dan berkualitas. <br>
-                    Mewujudkan dinamisasi peningkatan kualitas pendidikan berkarakter yang berkesinambungan dan
-                    berkelanjutan. <br>
-                    Mewujudkan produk kompetensi keahlian bernilai Jual Pasar Global. <br>
-                    Memperluas akses kemitraan dunia kerja yang menjamin lapangan kerja dan prakerin bagi peserta didik dan
-                    lulusan SMK BPI. <br>
-                </p>
-            </div>
+            <h1>MISI</h1>
+            <p class="text-center">Mewujudkan tata kelola, sistem pengendalian manajemen, dan sistem. <br>
+                Pengawasan internal yang modern, efektif, dan efesien. <br>
+                Menyalurkan dan Mendukung kreativitas peserta didik dengan sarana dan prasarana yang lengkap. <br>
+                Mewujudkan budaya religi, jujur, disiplin, beretika, berestetika, pekerja keras, kreatif, inovatif,
+                komptetitif, dan berkualitas. <br>
+                Mewujudkan dinamisasi peningkatan kualitas pendidikan berkarakter yang berkesinambungan dan
+                berkelanjutan. <br>
+                Mewujudkan produk kompetensi keahlian bernilai Jual Pasar Global. <br>
+                Memperluas akses kemitraan dunia kerja yang menjamin lapangan kerja dan prakerin bagi peserta didik dan
+                lulusan SMK BPI. <br>
+            </p>
         </div>
     </div>
 
@@ -151,20 +159,4 @@
     <div class="footer">
         <p>COPYRIGHT ©2022</p>
     </div>
-@endsection
-
-@section('script')
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-            document.body.style.backgroundColor = "white";
-        }
-    </script>
 @endsection

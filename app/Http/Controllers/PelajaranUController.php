@@ -11,10 +11,8 @@ class PelajaranUController extends Controller
     public function pelajaran()
     {
         $datas = pelajaran::all();
-        $pelajaran = pelajaran::all();
         return view('user.pelajaran')->with([
             'datas' => $datas,
-            'pelajaran' => $pelajaran
         ]);
     }
 }

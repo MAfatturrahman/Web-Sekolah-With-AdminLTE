@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    @include('layouts.navbar')
     @yield('style')
     @yield('content')
     @yield('script')

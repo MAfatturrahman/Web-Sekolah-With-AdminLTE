@@ -36,7 +36,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($creds)) return redirect()->route('guru.index');
 
-        return redirect()->route('home.login')->with('loginFailed', 'Username or password is incorrect');
+        return redirect()->route('dashboard.login')->with('loginFailed', 'Username or password is incorrect');
     }
 
     public function postRegister(Request $request)
@@ -49,7 +49,7 @@ class LoginController extends Controller
 
         $checkUsername = User::where('username', '=', $request->username)->exists();
 
-        if ($checkUsername) return redirect()->route('home.register')->with('usernameExists', 'Username already exists');
+        if ($checkUsername) return redirect()->route('dashboard.register')->with('usernameExists', 'Username already exists');
 
         User::create([
             'name' => $request->name,
@@ -57,13 +57,13 @@ class LoginController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
-        return redirect()->route('home.login');
+        return redirect()->route('dashboard.login');
     }
 
     public function logout()
     {
         Auth::logout();
 
-        return redirect()->route('home.login');
+        return redirect()->route('dashboard.login');
     }
 }

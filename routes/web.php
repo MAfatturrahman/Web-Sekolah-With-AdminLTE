@@ -22,7 +22,7 @@ use App\Http\Controllers\AuditController;
 // End Backend Controller
 
 // Start Frondend Controller
-use App\Http\Controllers\HompagesController;
+use App\Http\Controllers\HomepagesController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\PrestasiUController;
@@ -44,12 +44,14 @@ use App\Http\Controllers\EkstrakurikulerController;
 |
 */
 
-Route::get('/', function () {
-    return view('homepages');
-});
+// Route::get('/', function () {
+//     return view('homepages');
+// });
+
+// Route::get('/', [])
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
 //Untuk Halaman Admin
 Route::group(['middleware' => ['auth']], function () {
@@ -177,7 +179,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 //Untuk Halaman Pages
 //-------------------------------------------------------------------------------------------------------------------------------
-Route::get('/Homepages', [HompagesController::class, 'index'])->name('homepages');
+Route::get('/', [HomepagesController::class, 'index'])->name('homepages');
 Route::get('/Fasilitas', [FasilitasController::class, 'fasilitas'])->name('user.fasilitas');
 Route::get('/Jurusan', [JurusanController::class, 'jurusan'])->name('user.jurusan');
 Route::get('/Prestasi', [PrestasiUController::class, 'prestasi'])->name('user.prestasi');
