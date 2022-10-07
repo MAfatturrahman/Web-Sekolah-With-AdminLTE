@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="my_card">
-            <form method="POST" action="{{ url('prestasi') }}">
+            <form method="POST" action="{{ url('prestasi/' . $prestasi->id) }}">
                 @csrf
                 @method('PUT')
                 @if (Session::has('alert'))
